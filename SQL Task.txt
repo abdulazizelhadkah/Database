@@ -1,0 +1,11 @@
+Second Problem :
+SELECT FirstName ||" "|| LastName as "Employee Name", COUNT(O.EmployeeID) as "Number of Orders" FROM Employees AS E  inner JOIN Orders as o on E.EmployeeID = o.EmployeeID group by "Employee Name" order by COUNT(O.EmployeeID) desc LIMIT 10
+
+
+Third Problem:
+SELECT FirstName ||" "|| LastName as "Employee Name", sum(OD.Quantity) as "Quantity" FROM Employees AS E  inner JOIN Orders as o on E.EmployeeID = o.EmployeeID inner join OrderDetails as OD on o.OrderId = OD.OrderID inner join products as p on p.ProductId = OD.ProductId inner join Categories as c on c.CategoryId = p.CategoryId where c.CategoryName = "Beverages" group by "Employee Name" order by sum(OD.Quantity) desc LIMIT 10
+
+
+
+
+
